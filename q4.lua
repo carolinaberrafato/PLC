@@ -40,6 +40,11 @@ local function batalha()
             pikachuHP = pikachuHP - dano
         end
 
+        if pikachuHP <= 0 then
+            pikachuHP = 0
+        elseif raichuHP <= 0 then
+            raichuHP = 0
+        end
         -- Exibe as informações da jogada
         print(pokemon .. " usou " .. ataque.nome .. " e causou " .. dano .. " de dano!")
         print("Pikachu: " .. pikachuHP .. " / Raichu: " .. raichuHP .. "\n")
@@ -50,9 +55,9 @@ local function batalha()
 
     -- Retorna o vencedor da batalha
     if pikachuHP <= 0 then
-        return "Raichu"
+        return  print("Raichu venceu!")
     else
-        return "Pikachu"
+        return print("Pikachu venceu!")
     end
 end
 
